@@ -46,7 +46,7 @@ fclean  : clean
 
 norm    :
 	@printf "${PURPLE}SEARCHING FOR A PRINTF IN THE PROJECT: "
-	@printf "%i \n${NC}" $(shell grep "    printf" *.c | wc -l)
+	@printf "%i \n${NC}" $(shell grep "printf" *.c | wc -l)
 	@printf "${YELLOW}Norminette...\n${NC}"
 	@printf "${RED}"
 	@norminette src/*/*.c src/*.c inc/*.h *.c > test && printf "$(GREEN)\t[OK]\n" || grep Error test

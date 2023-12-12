@@ -6,7 +6,7 @@
 /*   By: emiro-co <emiro-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:16:20 by emiro-co          #+#    #+#             */
-/*   Updated: 2023/12/04 13:17:11 by emiro-co         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:17:57 by emiro-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,37 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * result);
 }
+
+void	ft_bzero(void *s, size_t n)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *) s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
+}
+
+int	list_size(t_philo *philos)
+{
+	if (philos == NULL)
+		return (0);
+	return (1 + list_size(philos->next));
+}
+
+/* void	free_all(t_index *index)
+{
+	if (index)
+	{
+		if (index->philos)
+		{
+			while (index->ph_num--)
+				free (index->philos[index->ph_num]);
+			
+		}
+	}
+} */
